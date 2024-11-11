@@ -17,7 +17,21 @@
             output.appendChild(oneline);
         }
     }
-
+    function searchCallback(result) {
+    let output = document.getElementById('outputArea');
+    output.innerHTML = ""; 
+    let results = result.results;    
+    let tableHTML = "<table border='1'><tr><th>アルバムイメージ</th><th>トラック名</th><th>アーティスト名</th></tr>";   
+    for (let r of results) {
+        tableHTML += "<tr>";
+        tableHTML += `<td><img src='${r.artworkUrl60}' alt='アルバムイメージ'></td>`;
+        tableHTML += `<td>${r.trackCensoredName}</td>`;
+        tableHTML += `<td>${r.artistName}</td>`;
+        tableHTML += "</tr>";
+    }
+    tableHTML += "</table>";
+    output.innerHTML = tableHTML;
+}
     function startRequest() {
         var statusField = document.getElementById('status');
         var s = '手嶌';
