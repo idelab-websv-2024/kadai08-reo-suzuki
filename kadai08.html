@@ -38,8 +38,8 @@
 
 <div id='status'></div>
 <div id='outputArea'></div>
-<input type='button' id='searchWord' value='検索' onclick="startRequest()"/>
-
+<input type='button' id='searchWord' value='検索' onclick="startRequest(document.getElementById('searchInput').value)"/>
+<input type="text" id="searchInput" placeholder="検索">
 
 <script id='caller'></script>
 
